@@ -32,9 +32,12 @@ func TestCreate(t *testing.T){
 	    QuestionCard(strike).									//This is again card type of question						
 		SetHeaderToQuestion(strike, 2, "HALF").					//Observe Question without answer is allowed but Answer without Question is not
 		AddTextRowToQuestion(strike, "h3", "This is the last question!", "#e456tc",true)
-	
+
+		// You need to bind this strike struct in wrapper() to make it strike complient
+
+		response := strike.Wrapper() 
 		
-	    fmt.Println(string(strike.ToJson()))						//ToJson() just converts the struct to json value
+	    fmt.Println(string(response.ToJson()))						//ToJson() just converts the struct to json value
 
 
 

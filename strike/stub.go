@@ -67,10 +67,18 @@ func Update_QCard_Array(qcard [][]Card_Row_Object,t []Card_Row_Object) [][]Card_
 	return newArray
 }
 
-func (create *Body_structure) ToJson() ([]byte) {
+func (create Response_wrapper_structure) ToJson() ([]byte) {
 	b, err := json.Marshal(create)
     if err != nil {
         fmt.Println(err)
     }
 	return b
+}
+
+func (create *Body_structure) Wrapper () Response_wrapper_structure {
+	wrapper := Response_wrapper_structure{
+		Status: 200,
+		Body: create,
+	}
+	return wrapper
 }
