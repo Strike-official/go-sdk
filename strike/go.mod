@@ -1,4 +1,4 @@
-module github.com/Strike-official/go-sdk/strike
+module github.com/strike-official/go-sdk/strike
 
 go 1.15
 
