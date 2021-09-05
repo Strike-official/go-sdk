@@ -5,7 +5,7 @@ import (
 )
 
 //post request for registering a user
-type Strike_Meta_Request_Structure struct{
+type Strike_Meta_Request_Structure struct {
 
 	// Bybrisk variable from strike bot
 	//
@@ -16,18 +16,18 @@ type Strike_Meta_Request_Structure struct{
 	User_session_variables User_session_variables_struct `json: "user_session_variables"`
 }
 
-type Bybrisk_session_variables_struct struct{
+type Bybrisk_session_variables_struct struct {
 
 	// User ID on Bybrisk
 	//
 	UserId string `json:"userId"`
-	
+
 	// Our own business Id in Bybrisk
 	//
 	BusinessId string `json:"businessId"`
 
 	// Handler Name for the API chain
-    //
+	//
 	Handler string `json:"handler"`
 
 	// Current location of the user
@@ -47,7 +47,7 @@ type Bybrisk_session_variables_struct struct{
 	Phone string `json:"phone"`
 }
 
-type GeoLocation_struct struct{
+type GeoLocation_struct struct {
 	// Latitude
 	//
 	Latitude float64 `json:"latitude"`
@@ -57,14 +57,14 @@ type GeoLocation_struct struct{
 	Longitude float64 `json:"longitude"`
 }
 
-type User_session_variables_struct struct{
+type User_session_variables_struct struct {
 }
 
 // Response structure
 // Boiler plate response strucutre
 
-type Response_wrapper_structure struct{
-	
+type Response_structure struct {
+
 	// Internal status of the API
 	//
 	Status int64 `json:"status"`
@@ -74,7 +74,7 @@ type Response_wrapper_structure struct{
 	Body *Body_structure `json:"body"`
 }
 
-type Body_structure struct{
+type Body_structure struct {
 
 	// Handler name of the API chain
 	//
@@ -89,7 +89,7 @@ type Body_structure struct{
 	QuestionArray []Transaction_structure `json:"questionArray,omitempty"`
 }
 
-type Transaction_structure struct{
+type Transaction_structure struct {
 
 	// Question object
 	//
@@ -100,7 +100,7 @@ type Transaction_structure struct{
 	Answer1 Answer_structure `json:"answer,omitempty"`
 }
 
-type Question_structure struct{
+type Question_structure struct {
 
 	// UI type of the question
 	//
@@ -125,7 +125,7 @@ type Question_structure struct{
 	QuestionDS string `json:"questionDS,omitempty"`
 }
 
-type Answer_structure struct{
+type Answer_structure struct {
 
 	// UI type of the answer
 	//
@@ -153,10 +153,10 @@ type Answer_structure struct{
 
 // UI specific structures
 
-type Card_Row_Object struct{
+type Card_Row_Object struct {
 
 	// Type of row object
-	// valid values are header, pic_row, h1, h2, h3, h4, h5, h6, price_row, video_row 
+	// valid values are header, pic_row, h1, h2, h3, h4, h5, h6, price_row, video_row
 	//
 	Type string `json:"type,omitempty"`
 
@@ -165,7 +165,7 @@ type Card_Row_Object struct{
 	Descriptor Descriptor_Structure `json:"descriptor,omitempty"`
 }
 
-type Descriptor_Structure struct{
+type Descriptor_Structure struct {
 
 	// context-objext is used when the type is set to header
 	// It defines value of which row object to select if the user selects that card
@@ -177,7 +177,7 @@ type Descriptor_Structure struct{
 	// FULL is used when we want our card to take full width of the screen else HALF is used
 	//
 	CardType string `json:"card-type,omitempty"`
-	
+
 	// Values of the row for the user to see
 	// It will always be an array of strings
 	//
