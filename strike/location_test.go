@@ -21,5 +21,5 @@ func TestLocationInput(t *testing.T) {
 				LocationInput("Select the property location")
 
 
-	fmt.Println(string(strikeObj.ToJson())) //ToJson() just converts the struct to json value
+	fmt.Println(string(strikeObj.ToJson())) //ToJson() . It just converts the struct to json value
 }
