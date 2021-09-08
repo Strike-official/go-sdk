@@ -1,5 +1,20 @@
 package strike
 
+const (
+	HALF_WIDTH string = "HALF"
+	FULL_WIDTH        = "FULL"
+	PICTURE_ROW        = "pic_row"
+	VIDEO_ROW        = "video_row"
+	HORIZONTAL_ORIENTATION       = "HORIZONTAL"
+	VERTICAL_ORIENTATION       = "VERTICAL"
+	H1        = "h1"
+	H2        = "h2"
+	H3        = "h3"
+	H4        = "h4"
+	H5        = "h5"
+	H6        = "h6"
+)
+
 func (t *Transaction_structure) QuestionCard() *Transaction_structure {
 	context := t.Question.QContext
 
@@ -70,14 +85,14 @@ func (t *Transaction_structure) AddTextRowToQuestion(row_type string, value stri
 	return t
 }
 
-func (t *Transaction_structure) AddGraphicRowToQuestion(graphic_type string, url string) *Transaction_structure {
+func (t *Transaction_structure) AddGraphicRowToQuestion(graphic_type string, url []string) *Transaction_structure {
 	context := t.Question.QContext
 	qcard := t.Question.QCard
 
 	card_row := Card_Row_Object{
 		Type: graphic_type,
 		Descriptor: Descriptor_Structure{
-			Value: []string{url},
+			Value: url,
 		},
 	}
 
@@ -178,7 +193,7 @@ func (t *Transaction_structure) SetHeaderToAnswer(card_context int, width string
 	return t
 }
 
-func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url string) *Transaction_structure {
+func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url []string) *Transaction_structure {
 	q := t.Question
 	ms := t.Answer1.MultipleSelect
 	co := t.Answer1.CardOrientation
@@ -190,7 +205,7 @@ func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url s
 	card_row := Card_Row_Object{
 		Type: graphic_type,
 		Descriptor: Descriptor_Structure{
-			Value: []string{url},
+			Value: url,
 		},
 	}
 
