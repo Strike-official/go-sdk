@@ -1,6 +1,6 @@
 package strike
 
-func (t *Transaction_structure) LocationInput() *Transaction_structure {
+func (t *Transaction_structure) LocationInput(value string) *Transaction_structure {
 	q := t.Question
 	ms := t.Answer1.MultipleSelect
 
@@ -9,6 +9,7 @@ func (t *Transaction_structure) LocationInput() *Transaction_structure {
 		Answer1: Answer_structure{
 			MultipleSelect:  ms,
 			ResponseType:    "Location-Input",
+			QLocationInput: []string{value},
 		},
 	}
 

@@ -18,7 +18,7 @@ func TestLocationInput(t *testing.T) {
 						AddTextRowToQuestion(app.H4, "Hey there this the top news for you", "black", false) //Add a text row to the card
 
 	_ = question1.Answer(true). //Creates an answer object with multiselect true or false. Must be after Question and not before
-				LocationInput()
+				LocationInput("Select the property location")
 
 
 	fmt.Println(string(strike.ToJson())) //ToJson() just converts the struct to json value
