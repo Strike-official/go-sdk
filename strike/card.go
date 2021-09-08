@@ -1,8 +1,8 @@
 package strike
 
 const (
-	HALF string = "HALF"
-	FULL        = "FULL"
+	HALFCARD string = "HALF"
+	FULLCARD        = "FULL"
 	PICTURE_ROW        = "pic_row"
 	VIDEO_ROW        = "video_row"
 	HORIZONTAL        = "HORIZONTAL"
