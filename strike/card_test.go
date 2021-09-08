@@ -6,7 +6,7 @@ import (
 	app "github.com/strike-official/go-sdk/strike"
 )
 
-func TestCreate(t *testing.T) {
+func TestCard(t *testing.T) {
 
 	strike := app.Create("first_handler", "https://abc.com") //This creates the bare minimum of the response
 
