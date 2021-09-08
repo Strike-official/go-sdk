@@ -1,12 +1,12 @@
 package strike
 
 const (
-	HALFCARD string = "HALF"
-	FULLCARD        = "FULL"
+	HALF_WIDTH string = "HALF"
+	FULL_WIDTH        = "FULL"
 	PICTURE_ROW        = "pic_row"
 	VIDEO_ROW        = "video_row"
-	HORIZONTAL        = "HORIZONTAL"
-	VERTICAL        = "VERTICAL"
+	HORIZONTAL_ORIENTATION       = "HORIZONTAL"
+	VERTICAL_ORIENTATION       = "VERTICAL"
 	H1        = "h1"
 	H2        = "h2"
 	H3        = "h3"
