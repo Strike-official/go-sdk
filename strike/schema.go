@@ -82,7 +82,7 @@ type Body_structure struct {
 
 	// URI of the next API in the chain
 	//
-	NextActionHandler string `json:"nextActionHandler,omitempty"`
+	NextActionHandler string `json:"nextActionHandlerURL,omitempty"`
 
 	// Question Array structure
 	//
