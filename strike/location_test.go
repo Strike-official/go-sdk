@@ -13,7 +13,7 @@ func TestLocationInput(t *testing.T) {
 	question1 := strikeObj.Question("Key1"). //Creates a question object with context as Key1
 						QuestionCard().                                                                   //inserts a card object in the question. Other interfaces to be used here
 						SetHeaderToQuestion(2, strike.HALF_WIDTH).                                                   //Sets the header for the card object. Always next to QuestionCard function. HALF FULL
-						AddGraphicRowToQuestion(strike.PICTURE_ROW, []string{"https://abc.com"}).                            //Add a photo or video to the card. pic_row video_row
+						AddGraphicRowToQuestion(strike.PICTURE_ROW, []string{"https://abc.com"},[]string{}).                            //Add a photo or video to the card. pic_row video_row
 						AddTextRowToQuestion(strike.H3, "News for the young!", "#e456tc", true).               //Add a text row to the card
 						AddTextRowToQuestion(strike.H4, "Hey there this the top news for you", "black", false) //Add a text row to the card
 

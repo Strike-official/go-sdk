@@ -85,7 +85,7 @@ func (t *Transaction_structure) AddTextRowToQuestion(row_type string, value stri
 	return t
 }
 
-func (t *Transaction_structure) AddGraphicRowToQuestion(graphic_type string, url []string) *Transaction_structure {
+func (t *Transaction_structure) AddGraphicRowToQuestion(graphic_type string, url []string, thumbnail_url []string) *Transaction_structure {
 	context := t.Question.QContext
 	qcard := t.Question.QCard
 
@@ -93,6 +93,7 @@ func (t *Transaction_structure) AddGraphicRowToQuestion(graphic_type string, url
 		Type: graphic_type,
 		Descriptor: Descriptor_Structure{
 			Value: url,
+			Thumbnail: thumbnail_url,
 		},
 	}
 
@@ -193,7 +194,7 @@ func (t *Transaction_structure) SetHeaderToAnswer(card_context int, width string
 	return t
 }
 
-func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url []string) *Transaction_structure {
+func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url []string, thumbnail_url []string) *Transaction_structure {
 	q := t.Question
 	ms := t.Answer1.MultipleSelect
 	co := t.Answer1.CardOrientation
@@ -206,6 +207,7 @@ func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url [
 		Type: graphic_type,
 		Descriptor: Descriptor_Structure{
 			Value: url,
+			Thumbnail: thumbnail_url,
 		},
 	}
 
