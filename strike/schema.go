@@ -187,6 +187,11 @@ type Descriptor_Structure struct {
 	//
 	Value []string `json:"value,omitempty"`
 
+	// Thumbnail is the picture url for the video row
+	// It will always be an array of strings
+	//
+	Thumbnail []string `json:"thumbnail,omitempty"`
+
 	// Color is set when the type is h1, h2, etc
 	// It defines the color of the text
 	// We can enter any hexadecimal value too

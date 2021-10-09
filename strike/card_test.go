@@ -13,7 +13,7 @@ func TestCard(t *testing.T) {
 	question1 := strikeObj.Question("Key1"). //Creates a question object with context as Key1
 						QuestionCard().                                                                   //inserts a card object in the question. Other interfaces to be used here
 						SetHeaderToQuestion(2, strike.HALF_WIDTH).                                                   //Sets the header for the card object. Always next to QuestionCard function. HALF FULL
-						AddGraphicRowToQuestion(strike.PICTURE_ROW, []string{"https://abc.com"}).                            //Add a photo or video to the card. pic_row video_row
+						AddGraphicRowToQuestion(strike.PICTURE_ROW, []string{"https://abc.com"}, []string{"tumbnail.jpeg"}).                            //Add a photo or video to the card. pic_row video_row. Notice how string array is empty in the last parameter
 						AddTextRowToQuestion(strike.H3, "News for the young!", "#e456tc", true).               //Add a text row to the card
 						AddTextRowToQuestion(strike.H4, "Hey there this the top news for you", "black", false) //Add a text row to the card
 
@@ -21,7 +21,7 @@ func TestCard(t *testing.T) {
 					AnswerCardArray(strike.VERTICAL_ORIENTATION).                         //Add an array of Card with orientation VERTICAL HORIZONTAL
 					AnswerCard().                                        //A card in the above added array
 					SetHeaderToAnswer(2, strike.FULL_WIDTH).                        //Sets the header for the card object
-					AddGraphicRowToAnswer(strike.PICTURE_ROW, []string{"https://abc.com","https://xyz.com"}). //Add a pic or video row to the card. pic_row video_row
+					AddGraphicRowToAnswer(strike.PICTURE_ROW, []string{"https://abc.com","https://xyz.com"},[]string{}). //Add a pic or video row to the card. pic_row video_row
 					AddTextRowToAnswer(strike.H3, "wolla!", "#e456tc", true).
 					AnswerCard().                 //Another card in the array
 					SetHeaderToAnswer(2, strike.FULL_WIDTH). //Header for the above card
