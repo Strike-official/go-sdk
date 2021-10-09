@@ -85,6 +85,8 @@ func (t *Transaction_structure) AddTextRowToQuestion(row_type string, value stri
 	return t
 }
 
+//The thumbnail_url is an array of url for the thumbnail of the video , it is used only when graphic_type is video_row
+//If the graphic_type is pic_row then thumbnail_url is an empty string array
 func (t *Transaction_structure) AddGraphicRowToQuestion(graphic_type string, url []string, thumbnail_url []string) *Transaction_structure {
 	context := t.Question.QContext
 	qcard := t.Question.QCard
@@ -193,6 +195,9 @@ func (t *Transaction_structure) SetHeaderToAnswer(card_context int, width string
 
 	return t
 }
+
+//The thumbnail_url is an array of url for the thumbnail of the video , it is used only when graphic_type is video_row
+//If the graphic_type is pic_row then thumbnail_url is an empty string array
 
 func (t *Transaction_structure) AddGraphicRowToAnswer(graphic_type string, url []string, thumbnail_url []string) *Transaction_structure {
 	q := t.Question
