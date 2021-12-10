@@ -7,7 +7,7 @@ import (
 	strike "github.com/strike-official/go-sdk/strike"
 )
 
-func TestTextInput(t *testing.T) {
+func TestNumberInput(t *testing.T) {
 
 	strikeObj := strike.Create("location_handler", "https://abc.com") //This creates the bare minimum of the response
 
@@ -16,7 +16,7 @@ func TestTextInput(t *testing.T) {
 		SetTextToQuestion("How are you?", "Text Description, getting used for testing purpose.")
 
 	question1.Answer(true).
-		TextInput("Input Description")
+		NumberInput("Input Description")
 
 	fmt.Println(string(strikeObj.ToJson())) //ToJson() just converts the struct to json value
 }
